@@ -1,0 +1,22 @@
+.footer {
+	padding: 10px 0;
+	margin-top: auto;
+	border-top: 1px solid $light_grey;
+	&-nav {
+		&__link {
+			font-size: 12px;
+			line-height: 16px;
+			transition: color .3s;
+			&:not(:last-child) {
+				&::after {
+					content: "・";
+					display: inline-block;
+					color: $text_grey;
+				}
+			}
+			&:hover {
+				color: $light_blue;
+			}
+		}
+	}
+}

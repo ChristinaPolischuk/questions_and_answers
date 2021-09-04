@@ -1,0 +1,12 @@
+extends ../layout/main
+
+block variables
+	- var title = "Главная"
+
+block content
+	include ../modules/_header
+	include index/_questions
+	include ../modules/_footer
+
+block script 
+	script(src="static/js/main.js")

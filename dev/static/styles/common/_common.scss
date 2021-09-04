@@ -1,0 +1,96 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+html {
+	line-height: 1;
+	font-size: 16px;
+}
+body {
+	// font-family: "Clear Sans", Arial, sans-serif;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	color: $global_black;
+}
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+}
+ul,li {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+p {
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+audio,
+canvas,
+iframe, 
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+textarea {
+	resize: none;
+}
+input,
+select,
+button {
+	outline: none;
+}
+button {
+	cursor: pointer;
+	border: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.container {
+	width: 100%;
+	max-width: $desktop-width;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.logo {
+	font-weight: 900;
+	font-size: 25px;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	@media screen and(max-width: 768px) {
+		order: 1;
+	}
+	span {
+		color: $global_violet;
+	}
+}
+
+.main-title {
+	margin-bottom: 20px;
+	font-size: 32px;
+	line-height: 38px;
+	color: $main_title_color;
+}
+
+.g-section {
+	&-title {
+		margin-bottom: 35px;
+		font-family: "Clear Sans Bold", Arial, sans-serif;
+		@include rem(32);
+		text-align: center;
+		&.g-section-title--white {
+			color: #fff;
+		}
+		&.g-section-title--black {
+			color: #fff;
+		}
+	}
+}
