@@ -27,11 +27,9 @@ let isBuildFlag = false;
 function clean() {
 	return del('dist');
 }
-function fonts() {
-	return gulp.src('dev/static/fonts/**/*.ttf')
-		.pipe(ttf2woff({ clone: true }))
-		.pipe(ttf2woff2({ clone: true }))
-		.pipe(gulp.dest('dist/static/fonts'));
+function copyJSON() {
+	return gulp.src('dev/JSON/**/*.json')
+		.pipe(gulp.dest('dist/JSON'));
 }
 function pugToHtml() {
 	return gulp.src('dev/pug/pages/*.pug')
@@ -144,7 +142,7 @@ function watch() {
 	gulp.watch("dist/*.html").on('change', browserSync.reload);
 }
 
-const dev = gulp.parallel(fonts, images, svgSpriteBuild, pugToHtml, scssTocss, libs, script)
+const dev = gulp.parallel(copyJSON, images, svgSpriteBuild, pugToHtml, scssTocss, libs, script)
 
 exports.default = gulp.series(clean, dev, watch);
 exports.build = gulp.series(clean, setMode(true), dev);
