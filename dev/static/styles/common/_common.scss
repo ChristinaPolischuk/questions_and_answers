@@ -155,10 +155,6 @@ section {
 	}
 	&__text {
 		color: $text_grey;
-		&.date::before {
-			content: "・";
-			display: inline-block;
-		}
 	}
 	&__breadcrumbs-link {
 		color: $light_blue;
@@ -167,6 +163,10 @@ section {
 			margin: 0 5px;
 			display: inline-block;
 			color: $global_grey;
+		}
+		&:last-of-type:after {
+			content: "・";
+			display: inline-block;
 		}
 	}
 }
@@ -209,13 +209,13 @@ section {
 		}
 		&:hover {
 			background-color: lighten($global_blue, 10%);
-			.form__btn-icon {
+			.form__icon-search {
 				transform: rotate(90deg) scale(1.2);
 			}
 		}
 		&:active {
 			background-color: darken($global_blue, 10%);
-			.form__btn-icon {
+			.form__icon-search {
 				transform: rotate(90deg) scale(.9);
 			}
 		}
