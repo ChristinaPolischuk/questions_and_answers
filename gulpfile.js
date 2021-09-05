@@ -46,7 +46,6 @@ function pugToHtml() {
 function scssTocss() {
 	return gulp.src('dev/static/styles/styles.scss')
 		.pipe(gulpPlumber())
-		.pipe(gulpSourcemaps.init())
 		.pipe(gulpSass())
 		.pipe(gulpCleanCss({ level: 2 }))
 		.pipe(gulpAutoprefixer())
@@ -55,7 +54,6 @@ function scssTocss() {
 			replace_from: /\.(png|jpg|jpeg)/,
 			replace_to: '.webp'
 		}))
-		.pipe(gulpSourcemaps.write())
 		.pipe(gulpPlumber.stop())
 		.pipe(browserSync.stream())
 		.pipe(gulp.dest('dist/static/css'));

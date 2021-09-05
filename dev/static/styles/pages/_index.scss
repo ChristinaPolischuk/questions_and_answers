@@ -1,63 +1,46 @@
 .questions {
-	padding: 25px 0;
-	&-title {
-		margin-bottom: 15px;
-		border-bottom: 1px solid $light_grey;
-		@media screen and(max-width: 768px) {
-			margin-bottom: 0;
-		}
-		&__text {
-			position: relative;
-			display: inline-flex;
-			padding: 15px 0;
-			color: $global_violet;
-			border-bottom: 4px solid $global_violet;
-			font-size: 18px;
-			line-height: 18px;
-			font-weight: 600;
+	&-list {
+		&-title {
+			margin-bottom: 15px;
+			border-bottom: 1px solid $light_grey;
+			@media screen and(max-width: 768px) {
+				margin-bottom: 0;
+			}
+			&__text {
+				position: relative;
+				display: inline-flex;
+				padding: 15px 0;
+				color: $global_violet;
+				border-bottom: 4px solid $global_violet;
+				font-size: 18px;
+				line-height: 18px;
+				font-weight: 600;
+			}
 		}
 	}
-	&-list {
-		border: 1px solid $light_grey;
-		border-radius: 8px;
-		@media screen and(max-width: 768px) {
-			border: none;
+	&__content {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	&__title {
+		margin-bottom: 5px;
+	}
+	&__link {
+		font-size: 16px;
+		line-height: 20px;
+		transition: color .3s;
+		&:hover {
+			color: $light_blue;
 		}
-		&__item {
-			display: flex;
-			padding: 25px;
-			@media screen and(max-width: 768px) {
-				border: none;
-				padding: 25px 0 0 0;
-			}
-			&:not(:last-child) {
-				border-bottom: 1px solid $light_grey;
-				@media screen and(max-width: 768px) {
-					border: none;
-				}
-			}
-		}
-		&__content {
-			font-size: 12px;
-			line-height: 16px;
-		}
-		&__title {
-			margin-bottom: 5px;
-		}
-		&__link {
-			font-size: 16px;
-			line-height: 20px;
-			transition: color .3s;
-			&:hover {
-				color: $light_blue;
-			}
-		}
-		&__rating {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-right: 20px;
-		}
+	}
+	&-list__item {
+		display: flex;
+	}
+	&-rating {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 20px;
 		&__number {
 			margin-bottom: 5px;
 			color: $text_grey;
@@ -75,27 +58,26 @@
 				border-radius: 50%;
 			}
 		}
+	}
+
+	&-favorite {
 		&__badge {
 			@include size(16px, 19px);
 			fill: $yellow;
 		}
-		&__small-text {
+		&__text {
 			font-weight: 700;
 		}
-		&__show-more {
-			color: $light_blue;
-			cursor: pointer;
-		}
-		&__info {
-			position: relative;
-			margin-top: 10px;
-			color: $text_grey;
-			& > *:not(:last-child) {
-				&::after {
-					content: "・";
-					display: inline-block;
-					color: $text_grey;
-				}
+	}
+	&-info {
+		position: relative;
+		margin-top: 10px;
+		color: $text_grey;
+		& > *:not(:last-child) {
+			&::after {
+				content: "・";
+				display: inline-block;
+				color: $text_grey;
 			}
 		}
 		&__category {
@@ -103,3 +85,4 @@
 		}
 	}
 }
+

@@ -6,8 +6,7 @@ html {
 	font-size: 16px;
 }
 body {
-	// font-family: "Clear Sans", Arial, sans-serif;
-	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: $global_black;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -40,12 +39,17 @@ textarea {
 }
 input,
 select,
-button {
+button,
+textarea {
 	outline: none;
 }
 button {
 	cursor: pointer;
 	border: none;
+}
+
+section {
+	padding: 25px 0;
 }
 
 .wrapper {
@@ -80,17 +84,148 @@ button {
 	color: $main_title_color;
 }
 
-.g-section {
-	&-title {
-		margin-bottom: 35px;
-		font-family: "Clear Sans Bold", Arial, sans-serif;
-		@include rem(32);
-		text-align: center;
-		&.g-section-title--white {
-			color: #fff;
+.list {
+	border: 1px solid $light_grey;
+	border-radius: 8px;
+	@media screen and(max-width: 768px) {
+		border: none;
+	}
+	&__item {
+		padding: 25px;
+		@media screen and(max-width: 768px) {
+			border: none;
+			padding: 25px 0 0 0;
 		}
-		&.g-section-title--black {
-			color: #fff;
+		&:not(:last-child) {
+			border-bottom: 1px solid $light_grey;
+			@media screen and(max-width: 768px) {
+				border: none;
+			}
 		}
+	}
+	&-show-more {
+		display: flex;
+		flex-direction: column;
+		&__text {
+			order: 1;
+			height: 45px;
+			overflow: hidden;
+		}
+		&__btn {
+			margin-top: 5px;
+			order: 2;
+			background-color: transparent;
+			align-self: flex-start;
+			color: $light_blue;
+			&:focus {
+				color: transparent;
+				pointer-events: none;
+				& ~ .list-show-more__text {
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
+.user-profile {
+	display: flex;
+	margin-bottom: 15px;
+	&__avatar {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		flex: none;
+		margin-right: 10px;
+		@include size(32px);
+		background-color: $global_grey;
+		border-radius: 50%;
+	}
+	&__icon {
+		@include size(25px, 28px);
+		fill: #fff;
+	}
+	&__name {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	&__info {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	&__text {
+		color: $text_grey;
+		&.date::before {
+			content: "・";
+			display: inline-block;
+		}
+	}
+	&__breadcrumbs-link {
+		color: $light_blue;
+		&:not(:last-of-type)::after {
+			content: ">";
+			margin: 0 5px;
+			display: inline-block;
+			color: $global_grey;
+		}
+	}
+}
+
+.form {
+	max-width: 730px;
+	margin: 0 auto;
+	& > *:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	&__field, &__message {
+		@include size(100%, 48px);
+		padding: 0 20px;
+		border-radius: 24px;
+		border: 1px solid $global_grey;
+		font-size: 18px;
+		transition: border-color .3s;
+		@media screen and(max-width: 768px) {
+			padding: 0 10px;
+			height: 40px;
+			font-size: 16px;
+		}
+		&:focus {
+			border-color: $global_blue;
+		}
+	}
+	&__message {
+		min-height: 200px;
+		padding-top: 10px;
+	}
+	&__btn {
+		padding: 0 23px;
+		height: 42px;
+		border-radius: 24px;
+		background-color: $global_blue;
+		color: #fff;
+		transition: background-color .3s;
+		@media screen and(max-width: 768px) {
+			height: 34px;
+		}
+		&:hover {
+			background-color: lighten($global_blue, 10%);
+			.form__btn-icon {
+				transform: rotate(90deg) scale(1.2);
+			}
+		}
+		&:active {
+			background-color: darken($global_blue, 10%);
+			.form__btn-icon {
+				transform: rotate(90deg) scale(.9);
+			}
+		}
+		&:focus {
+			box-shadow: 0 0 15px $global_blue;
+		}
+	}
+	&__icon-search {
+		@include size(20px);
+		fill: #fff;
+		transition: transform .3s;
 	}
 }

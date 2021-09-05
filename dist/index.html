@@ -2,7 +2,7 @@
 <html lang="ru-Ru">
   <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>Questions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <link rel="stylesheet" href="static/css/styles.css">
@@ -11,75 +11,72 @@
     <div class="wrapper">
       <header class="header"> 
         <div class="header__content container"><a class="logo" href="index.html"> <span>Qn</span>A</a>
-          <div class="header-search"> 
-            <input class="header-search__field" type="text" placeholder="Search Answers">
-            <button class="header-search__btn" type="submit">
-              <svg class="icon icon-search header-search__icon">
+          <form class="header-search"> 
+            <input class="form__field" type="text" placeholder="Search Answers" list="choices" autocomplete="on">
+            <datalist id="choices"> 
+              <option value="Option 1"> </option>
+              <option value="Option 2"> </option>
+              <option value="Option 3"> </option>
+              <option value="Option 4"> </option>
+              <option value="Option 5"> </option>
+            </datalist>
+            <button class="header-search__btn form__btn" type="submit">
+              <svg class="icon icon-search form__icon-search">
                 <use xlink:href="static/images/sprite/symbol/sprite.svg#search"></use>
               </svg>
             </button>
-          </div>
-          <div class="header__select-wrapper">
-            <svg class="icon icon-plus header__select-icon">
-              <use xlink:href="static/images/sprite/symbol/sprite.svg#plus"></use>
-            </svg>
-            <select class="header__select">
-              <option value="">Choose</option>
-              <option value="">Option 1</option>
-              <option value="">Option 2</option>
-              <option value="">Option 3</option>
-              <option value="">Option 4</option>
-              <option value="">Option 5</option>
-            </select>
-          </div><a class="header__link" href="">About</a>
+          </form><a class="header__link" href="/about.html">About</a>
         </div>
       </header>
       <section class="questions"> 
         <div class="container"> 
           <h1 class="main-title">Questions</h1>
-          <h2 class="questions-title"> <span class="questions-title__text">Discover Recent Questions</span></h2>
-          <ul class="questions-list"> 
-            <li class="questions-list__item"> 
-              <div class="questions-list__rating"> <span class="questions-list__number">285</span><span class="questions-list__icon-wrapper">
-                  <svg class="icon icon-like questions-list__icon">
+          <h2 class="questions-list-title"> <span class="questions-list-title__text">Discover Recent Questions</span></h2>
+          <ul class="list"> 
+            <li class="questions-list__item list__item"> 
+              <div class="questions-rating"> <span class="questions-rating__number">285</span><span class="questions-rating__icon-wrapper">
+                  <svg class="icon icon-like questions-rating__icon">
                     <use xlink:href="static/images/sprite/symbol/sprite.svg#like"></use>
                   </svg></span></div>
-              <div class="questions-list__content">
-                <h3 class="questions-list__title"> <a class="questions-list__link" href="">Did leftists ruin this site with censorship by deleting questions and answers?</a></h3>
-                <div class="questions-list__favorite"> 
-                  <svg class="icon icon-medal questions-list__badge">
+              <div class="questions__content">
+                <h3 class="questions__title"> <a class="questions__link" href="/answers.html">Did leftists ruin this site with censorship by deleting questions and answers?</a></h3>
+                <div class="questions-favorite"> 
+                  <svg class="icon icon-medal questions-favorite__badge">
                     <use xlink:href="static/images/sprite/symbol/sprite.svg#medal"></use>
-                  </svg><span class="questions-list__small-text">Favorite Answer:</span>
+                  </svg><span class="questions-favorite__text">Favorite Answer:</span>
                 </div>
-                <p class="questions-list__text">Yes I could make a baseline non insulting question about Joe Biden and it was amazing how fast it was taken down. It really started going downhill when Verizon bought Yahoo. I imagine a bunch of soy boys with ironic beards working in some crammed up Verizon building in cubicles getting triggered similar to how liberals </p><span class="questions-list__show-more">... Show more</span>
-                <div class="questions-list__info"> <span class="questions-list__quantity">7 Answers </span><a class="questions-list__category" href="">Politics</a><span class="questions-list__date">10 hours ago</span></div>
+                <div class="list-show-more">
+                  <button class="list-show-more__btn">... Show more</button>
+                  <p class="questions-list__text list-show-more__text">Yes I could make a baseline non insulting question about Joe Biden and it was amazing how fast it was taken down. It really started going downhill when Verizon bought Yahoo. I imagine a bunch of soy boys with ironic beards working in some crammed up Verizon building in cubicles getting triggered similar to how liberals Yes I could make a baseline non insulting question about Joe Biden and it was amazing how fast it was taken down. It really started going downhill when Verizon bought Yahoo. I imagine a bunch of soy boys with ironic beards working in some crammed up Verizon building in cubicles getting triggered similar to how liberals Yes I could make a baseline non insulting question about Joe Biden and it was amazing how fast it was taken down. It really started going downhill when Verizon bought Yahoo. I imagine a bunch of soy boys with ironic beards working in some crammed up Verizon building in cubicles getting triggered similar to how liberals </p>
+                </div>
+                <div class="questions-info"> <span class="questions-info__quantity">7 Answers </span><a class="questions-info__category" href="">Politics</a><span class="questions-info__date">10 hours ago</span></div>
               </div>
             </li>
-            <li class="questions-list__item"> 
-              <div class="questions-list__rating"> <span class="questions-list__number">85</span><span class="questions-list__icon-wrapper">
-                  <svg class="icon icon-like questions-list__icon">
+            <li class="questions-list__item list__item"> 
+              <div class="questions-rating"> <span class="questions-rating__number">211</span><span class="questions-rating__icon-wrapper">
+                  <svg class="icon icon-like questions-rating__icon">
                     <use xlink:href="static/images/sprite/symbol/sprite.svg#like"></use>
                   </svg></span></div>
-              <div class="questions-list__content">
-                <h3 class="questions-list__title"> <a class="questions-list__link" href="">Why are guns allowed in the US?</a></h3>
-                <p class="questions-list__text">Why are members of the public allowed to own guns? Aren't guns dangerous? So why are members of the public allowed to own guns?</p>
-                <div class="questions-list__info"> <span class="questions-list__quantity">26 Answers </span><a class="questions-list__category" href="">Politics</a><span class="questions-list__date">20 hours ago</span></div>
+              <div class="questions__content">
+                <h3 class="questions__title"> <a class="questions__link" href="/answers.html">How are NBA ratings since having gone Woke?</a></h3>
+                <div class="questions-favorite"> 
+                  <svg class="icon icon-medal questions-favorite__badge">
+                    <use xlink:href="static/images/sprite/symbol/sprite.svg#medal"></use>
+                  </svg><span class="questions-favorite__text">Favorite Answer:</span>
+                </div>
+                <p class="questions-list__text">It is the height of hypocrisy for people who are making an average salary of more than $8.5 Million to lecture us about how they are being oppressed.</p>
+                <div class="questions-info"> <span class="questions-info__quantity">46 Answers </span><a class="questions-info__category" href="">Politics</a><span class="questions-info__date">3 days ago</span></div>
               </div>
             </li>
-            <li class="questions-list__item"> 
-              <div class="questions-list__rating"> <span class="questions-list__number">71</span><span class="questions-list__icon-wrapper">
-                  <svg class="icon icon-like questions-list__icon">
+            <li class="questions-list__item list__item"> 
+              <div class="questions-rating"> <span class="questions-rating__number">39</span><span class="questions-rating__icon-wrapper">
+                  <svg class="icon icon-like questions-rating__icon">
                     <use xlink:href="static/images/sprite/symbol/sprite.svg#like"></use>
                   </svg></span></div>
-              <div class="questions-list__content">
-                <h3 class="questions-list__title"> <a class="questions-list__link" href="">On our last day here in the Y/A world would you like to list the dumbest fvcking thing Trump has ever said?</a></h3>
-                <div class="questions-list__favorite"> 
-                  <svg class="icon icon-medal questions-list__badge">
-                    <use xlink:href="static/images/sprite/symbol/sprite.svg#medal"></use>
-                  </svg><span class="questions-list__small-text">Favorite Answer:</span>
-                </div>
+              <div class="questions__content">
+                <h3 class="questions__title"> <a class="questions__link" href="/answers.html">On our last day here in the Y/A world would you like to list the dumbest fvcking thing Trump has ever said?</a></h3>
                 <p class="questions-list__text">This is tough choosing just one. Revolutionary War airports. Mexico will pay for the wall. Injecting disinfectant. The virus will just go away, like magic. I won the election. Invisible airplanes. But my personal favorite is "believe me" every time he lied.</p>
-                <div class="questions-list__info"> <span class="questions-list__quantity">20 Answers </span><a class="questions-list__category" href="">Politics</a><span class="questions-list__date">2 days ago</span></div>
+                <div class="questions-info"> <span class="questions-info__quantity">36 Answers </span><a class="questions-info__category" href="">Politics</a><span class="questions-info__date">5 days ago</span></div>
               </div>
             </li>
           </ul>

@@ -8,10 +8,13 @@
 		}
 	}
 	&__link {
-		order: 3;
+		order: 2;
 		font-size: 18px;
 		font-weight: 700;
 		color: $global_violet;
+		@media screen and(max-width: 768px) {
+			margin-left: auto;
+		}
 	}
 	&-search {
 		position: relative;
@@ -21,84 +24,10 @@
 		margin: 0 10px;
 		@media screen and(max-width: 768px) {
 			margin: 15px 0 0 0;
-			order: 4;
-		}
-		&__field {
-			@include size(100%, 48px);
-			padding: 0 20px;
-			border-radius: 24px;
-			border: 1px solid $global_grey;
-			font-size: 18px;
-			transition: border-color .3s;
-			@media screen and(max-width: 768px) {
-				padding: 0 10px;
-				height: 40px;
-				font-size: 16px;
-			}
-			&:focus {
-				border-color: $global_blue;
-			}
+			order: 3;
 		}
 		&__btn {
 			@include position('absolute', $right: 3px, $top: 3px, $bottom: 3px);
-			@include size(66px, 42px);
-			border-radius: 24px;
-			background-color: $global_blue;
-			transition: background-color .3s;
-			@media screen and(max-width: 768px) {
-				@include size(56px, 34px);
-			}
-			&:hover {
-				background-color: lighten($global_blue, 10%);
-				.header-search__icon {
-					transform: rotate(90deg) scale(1.2);
-				}
-			}
-			&:active {
-				background-color: darken($global_blue, 10%);
-				.header-form__icon {
-					transform: rotate(90deg) scale(.9);
-				}
-			}
-			&:focus {
-				box-shadow: 0 0 15px $global_blue;
-			}
-		}
-		&__icon {
-			@include size(20px);
-			fill: #fff;
-			transition: transform .3s;
-		}
-	}
-	&__select {
-		cursor: pointer;
-		-o-appearance: none;
-		appearance: none;
-		padding: 10px 18px 10px 46px;
-		background-color: $global_violet;
-		border-radius: 24px;
-		color: #fff;
-		font-size: 18px;
-		@media screen and(max-width: 768px) {
-			padding: 8px 12px 8px 46px;
-			font-size: 16px;
-		}
-		&-wrapper {
-			position: relative;
-			margin-right: 10px;
-			@media screen and(max-width: 768px) {
-				margin-left: auto;
-				order: 2;
-			}
-		}
-		&-icon {
-			@include position('absolute', $top: 12px, $left: 18px);
-			@include size(18px);
-			fill: #fff;
-			pointer-events: none;
-			@media screen and(max-width: 768px) {
-				top: 10px;
-			}
 		}
 	}
 }

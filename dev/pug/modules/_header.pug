@@ -3,17 +3,14 @@ header.header
 		a.logo(href="index.html") 
 			span Qn
 			| A
-		.header-search 
-			input.header-search__field(type="text", placeholder="Search Answers")
-			button.header-search__btn(type="submit")
-				+icon('search', 'header-search__icon')
-		.header__select-wrapper
-			+icon('plus', 'header__select-icon')
-			select.header__select
-				option(value="") Choose
-				option(value="") Option 1
-				option(value="") Option 2
-				option(value="") Option 3
-				option(value="") Option 4
-				option(value="") Option 5
-		a.header__link(href="") About
+		form.header-search 
+			input.form__field(type="text", placeholder="Search Answers", list="choices", autocomplete="on")
+			datalist#choices 
+				option(value="Option 1") 
+				option(value="Option 2") 
+				option(value="Option 3") 
+				option(value="Option 4") 
+				option(value="Option 5") 
+			button.header-search__btn.form__btn(type="submit")
+				+icon('search', 'form__icon-search')
+		a.header__link(href="/about.html") About
