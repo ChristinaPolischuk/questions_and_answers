@@ -63,14 +63,14 @@ function libs() {
 function script() {
 	return gulp.src('dev/static/js/main.js')
 		.pipe(gulpPlumber())
-		.pipe(gulpSourcemaps.init())
+		// .pipe(gulpSourcemaps.init())
 		.pipe(gulpBabel({
 			"plugins": [
 				"@babel/plugin-transform-async-to-generator"
 			]
 		}))
 		.pipe(gulpIf(isBuildFlag, gulpUglify()))
-		.pipe(gulpSourcemaps.write())
+		// .pipe(gulpSourcemaps.write())
 		.pipe(gulpPlumber.stop())
 		.pipe(browserSync.stream())
 		.pipe(gulp.dest('dist/static/js'));
