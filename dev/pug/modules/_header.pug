@@ -4,7 +4,8 @@ header.header
 			span Qn
 			| A
 		form.header-search 
-			input.form__field(type="text", placeholder="Search Answers", id="autocomplete", autocomplete="off")
+			input#search.form__field(type="text", placeholder="Search Answers", autocomplete="off")
+			ul#match-list.match-list
 			button.header-search__btn.form__btn(type="submit")
 				+icon('search', 'form__icon-search')
 		a.header__link(href="about.html") About

@@ -1,28 +1,18 @@
-.autocomplete {
-	&-wrap {
-		position: relative;
-		width: 100%;
-		&.active .autocomplete-list{
-			display: block;
-		}
-	}
+.match {
 	&-list {
-		@include position('absolute', $top: 100%, $left: 0);
+		position: absolute;
 		z-index: 999;
-		border: 1px solid $global_grey;
-		border-radius: 0 0 24px 24px;
+		top: calc(100% + 5px);
+		left: 0;
 		width: 100%;
-		max-height: 400px;
-		overflow-y: auto;
-		display: none;
 	}
 	&-item {
+		background-color: #fff;
 		padding: 10px 20px;
-		cursor: pointer;
-		font-size: 18px;
-		transition: background-color .3s;
-		&:hover, &.focused {
-			background-color: $light_grey;
+		border: 1px solid $light-grey;
+		background-color: #fff;
+		&:not(:last-child) {
+			border-bottom: none;
 		}
 	}
 }

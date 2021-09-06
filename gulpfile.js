@@ -6,6 +6,7 @@ const gulpAutoprefixer = require('gulp-autoprefixer');
 const gulpCleanCss = require('gulp-clean-css');
 const gulpSourcemaps = require('gulp-sourcemaps');
 const gulpBabel = require('gulp-babel');
+const gulpBabelify = require('babelify');
 const gulpUglify = require('gulp-uglify');
 const gulpImagemin = require('gulp-imagemin');
 const del = require('del');
@@ -14,8 +15,6 @@ const svgSprite = require('gulp-svg-sprite');
 const svgmin = require('gulp-svgmin');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
-const ttf2woff = require('gulp-ttf2woff');
-const ttf2woff2 = require('gulp-ttf2woff2');
 const gulpWebp = require('gulp-webp');
 const gulpWebpHtml = require('gulp-xv-webp-html');
 const gulpWebpcss = require('gulp-webpcss');
@@ -28,8 +27,8 @@ function clean() {
 	return del('dist');
 }
 function copyJSON() {
-	return gulp.src('dev/JSON/**/*.json')
-		.pipe(gulp.dest('dist/JSON'));
+	return gulp.src('data/**/*.json')
+		.pipe(gulp.dest('dist/data'));
 }
 function pugToHtml() {
 	return gulp.src('dev/pug/pages/*.pug')
@@ -66,7 +65,9 @@ function script() {
 		.pipe(gulpPlumber())
 		.pipe(gulpSourcemaps.init())
 		.pipe(gulpBabel({
-			presets: ['@babel/env']
+			"plugins": [
+				"@babel/plugin-transform-async-to-generator"
+			]
 		}))
 		.pipe(gulpIf(isBuildFlag, gulpUglify()))
 		.pipe(gulpSourcemaps.write())
