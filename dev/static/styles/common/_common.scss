@@ -175,7 +175,13 @@ section {
 	max-width: 730px;
 	margin: 0 auto;
 	& > *:not(:last-child) {
-		margin-bottom: 20px;
+		margin-bottom: 25px;
+	}
+	&__error-text {
+		margin-bottom: 5px;
+		padding-left: 20px;
+		display: block;
+		color: red;
 	}
 	&__field, &__message {
 		@include size(100%, 48px);
@@ -184,6 +190,9 @@ section {
 		border: 1px solid $global_grey;
 		font-size: 18px;
 		transition: border-color .3s;
+		&.error {
+			border-color: red;
+		}
 		@media screen and(max-width: 768px) {
 			padding: 0 10px;
 			height: 40px;

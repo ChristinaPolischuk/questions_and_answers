@@ -1,7 +1,22 @@
 [
-	"Option 1",
-	"Option 2",
-	"Option 3",
-	"Option 4",
-	"Option 5"
+	{
+		"title": "Option 1",
+		"url": "/test-1"
+	},
+	{
+		"title": "Option 2",
+		"url": "/test-2"
+	},
+	{
+		"title": "Option 3",
+		"url": "/test-3"
+	},
+	{
+		"title": "Option 4",
+		"url": "/test-4"
+	},
+	{
+		"title": "Option 5",
+		"url": "/test-5"
+	}
 ]
