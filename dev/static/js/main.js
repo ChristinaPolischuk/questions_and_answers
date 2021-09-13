@@ -1,41 +1,18 @@
-// const endpoint = '../../data/search-autocomplete.json';
-// const matchItems = [];
-// fetch(endpoint)
-// 	.then(raw => raw.json())
-// 	.then(data => matchItems.push(...data));
+$('body').on('keyup', '.js-search-matches', function (e) {
+	let self = $(this);
+	let list = $('.' + self.data('list'));
 
-// function findMatches(wordToMatch, matchItems) {
-// 	return matchItems.filter(matchItem => {
-// 		const regex = new RegExp(wordToMatch, "gi");
-// 		return matchItem.title.match(regex);
-// 	});
-// }
-// function numberWithCommas(x) {
-// 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-// }
-// function displayMatches() {
-// 	const matchArray = findMatches(this.value, matchItems);
-// 	const html = matchArray.map(matchItem => {
-// 		const regex = new RegExp(this.value, 'gi');
-// 		const item = matchItem.title.replace(regex, `${this.value}`);
-// 		const url = matchItem.url;
-// 		return `<li class="match-item"><a href="${url}">${item}</a></li>`;
-// 	}).join('');
-// 	if (searchInput.value.length > 0) {
-// 		matchList.innerHTML = html;
-// 	} else {
-// 		matchList.innerHTML = '';
-// 	}
-// }
-// const searchInput = document.querySelector("#search");
-// const matchList = document.querySelector("#match-list");
-// searchInput.addEventListener("change", displayMatches);
-// searchInput.addEventListener("keyup", displayMatches);
-
-
-
-async function getResponse() {
-	return await fetch('../../data/search-autocomplete.json');
-}
-
-console.log(getResponse());
+	$.ajax({
+		url: self.data('url') + '?q=' + self.val(),
+		type: 'GET',
+		dataType: 'json',
+		success: function (response) {
+			list.empty();
+			if (response.items.length) {
+				$.each(response.items, function (i, item) {
+					list.append(`<a class="match-link" href="${item.url}">${item.title}</a>`);
+				});
+			}
+		}
+	});
+});

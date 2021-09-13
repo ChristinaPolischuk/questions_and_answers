@@ -6,7 +6,8 @@
 		left: 0;
 		width: 100%;
 	}
-	&-item {
+	&-link {
+		display: block;
 		background-color: #fff;
 		padding: 10px 20px;
 		border: 1px solid $light-grey;
